@@ -40,22 +40,26 @@
                                 </tr>
                             </thead>
                            <tbody>
-                               @foreach ($products as $product)
+                               @forelse ( $products as $product )
                                <tr>
-                                   <td class="align-middle">{{$product->nama_produk}}</td>
-                                   <td class="align-middle">{{$product->keterangan}}</td>
-                                   <td class="align-middle">{{$product->harga}}</td>
-                                   <td class="align-middle">{{$product->jumlah}}</td>
-                                   <td class="align-middle">
-                                       <a href="{{route('products.edit', $product->id)}}" class="btn btn-success btn-circle">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        {!! Form::open(['route' => ['products.destroy', $product->id], 'class' => 'd-inline-block', 'method' => 'delete']) !!}
-                                            {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-circle'] )  }}
-                                        {!! Form::close() !!}
-                                   </td>
-                               </tr>
-                               @endforeach
+                                <td class="align-middle">{{$product->nama_produk}}</td>
+                                <td class="align-middle">{{$product->keterangan}}</td>
+                                <td class="align-middle">{{$product->harga}}</td>
+                                <td class="align-middle">{{$product->jumlah}}</td>
+                                <td class="align-middle">
+                                    <a href="{{route('products.edit', $product->id)}}" class="btn btn-success btn-circle">
+                                         <i class="fas fa-edit"></i>
+                                     </a>
+                                     {!! Form::open(['route' => ['products.destroy', $product->id], 'class' => 'd-inline-block', 'method' => 'delete']) !!}
+                                         {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-circle'] )  }}
+                                     {!! Form::close() !!}
+                                </td>
+                            </tr>
+                               @empty
+                                   <tr>
+                                       <td colspan="5" class="text-center">Tidak Ada Produk Yang Tersedia</td>
+                                   </tr>
+                               @endforelse
                             </tbody>
                         </table>
                     </div>
