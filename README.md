@@ -15,5 +15,6 @@ $ php artisan key:generate
 Buka file .env dan sesuaikan db values dengan db yang anda buat
 ```sh
 $ php artisan migrate
+```
 
 **Hell Yeah!**
