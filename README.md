@@ -1,3 +1,4 @@
+![alt text](https://github.com/insomness/arkadmy-tugas10/blob/main/public/images/arkademy.PNG)
 ## Instalasi
 ```sh
 $ git clone https://github.com/insomness/arkadmy-tugas10.git
